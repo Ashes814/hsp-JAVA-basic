@@ -11,7 +11,7 @@ public class Hello {
 
     // 编写一个主方法
     public static void main(String[] args) {
-        System.out.println("小欧宝 is studing \t java");
+        System.out.println("小欧宝 is studing \r\n java");
     }
 }
 
