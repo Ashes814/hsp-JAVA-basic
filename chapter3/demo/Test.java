@@ -1,7 +1,9 @@
 public class Test {
     public static void main(String[] args) {
-        long n3 = 88488888888888l;
+        double n3 = 8848.88888f;
+        double n4 = 8848.88888;
         System.out.println(n3);
+        System.out.println(n4);
 
     }
 }
