@@ -2,18 +2,24 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
+        // Scanner input = new Scanner(System.in);
+        // int age = input.nextInt();
+        // if(age < 18) {
+        //     System.out.println(9);
+        // }
 
-
-       System.out.println(a);
-       System.out.println(b);
-       System.out.println(c);
-       System.out.println(d);
-       System.out.println(e);
-       System.out.println(~-2); // 1
-       System.out.println(~2); // -3 10000000 00000000 00000000 00000011
-       System.out.println(2|3); //3
-       System.out.println(2^3); //1
-
+    Scanner input = new Scanner(System.in);
+    int level = input.nextInt();
+    int i = 1;
+    while(i <= level) {
+        for(int j = 1;j<=i;j++) {
+            System.out.print(" ");
+            System.out.print('*');
+            
+        }
+        System.out.print('\n');
+        i++;
+    }
 
 
 
