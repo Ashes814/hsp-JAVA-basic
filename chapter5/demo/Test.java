@@ -2,42 +2,25 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        // Scanner input = new Scanner(System.in);
-        // int age = input.nextInt();
-        // if(age < 18) {
-        //     System.out.println(9);
-        // }
 
-    // Scanner input = new Scanner(System.in);
-    // int level = input.nextInt();
-    int level = 7;
-    int i = 1;
-    while(i <= level) {
-        for(int k = 1;k<=(level - i);k++) {
-            System.out.print(" ");
-            // System.out.print(" ");
-            
-        }
+        int[] unsortedArray = {1,25,67,8848,7765,7723,24,69,80,57,13};
+        int arrayLength = unsortedArray.length;
+        int current;
+        int next;
 
-
-        for(int j = 1;j<=i;j++) {
-
-            if (j == 1 | j == i | i == level) {
-                System.out.print('*');
-            } else {
-                System.out.print(' ');
+        for (int point = arrayLength - 1; point>0; point--) {
+            for (int i = 0; i < point; i++) {
+                current = unsortedArray[i];
+                next = unsortedArray[i + 1];
+                if (current > next) {
+                    unsortedArray[i + 1] = current;
+                    unsortedArray[i] = next;
+                }
             }
-            
-            System.out.print(" ");
-            
         }
 
-       
-        System.out.print('\n');
-        i++;
-    }
-
-
-
+        for (int n=0;n<arrayLength;n++) {
+            System.out.println(unsortedArray[n]);
+        }
     }
 }
