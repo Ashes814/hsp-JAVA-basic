@@ -3,24 +3,36 @@ import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
 
-        int[] unsortedArray = {1,25,67,8848,7765,7723,24,69,80,57,13};
-        int arrayLength = unsortedArray.length;
-        int current;
-        int next;
+        int[][] yhTri = new int[10][];
+        for (int i = 0; i < yhTri.length;i++) {
+            yhTri[i] = new int[i + 1];
+           
 
-        for (int point = arrayLength - 1; point>0; point--) {
-            for (int i = 0; i < point; i++) {
-                current = unsortedArray[i];
-                next = unsortedArray[i + 1];
-                if (current > next) {
-                    unsortedArray[i + 1] = current;
-                    unsortedArray[i] = next;
+            
+
+
+            for (int j = 0; j < i + 1 ; j++) {
+                if (j == 0 || j == i) {
+                    yhTri[i][j] = 1;
+                } else {
+                    yhTri[i][j] = yhTri[i-1][j] + yhTri[i-1][j-1];
                 }
+                
             }
+        
+           
+            
         }
 
-        for (int n=0;n<arrayLength;n++) {
-            System.out.println(unsortedArray[n]);
+
+        for (int i = 0; i<yhTri.length; i++) {
+            for (int j = 0; j<yhTri[i].length;j++) {
+                System.out.print(yhTri[i][j]);
+                System.out.print(" ");
+            }
+            System.out.print("\n");
         }
+
     }
+       
 }
