@@ -2,30 +2,21 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        int[][] testArray = {{1},{1,2},{1,2,3}};
-        MyTool t1 = new MyTool();
-        t1.print2D(testArray);
+    Recursion r1 = new Recursion();
+    System.out.println(r1.fibonacci(1));
+    System.out.println(r1.fibonacci(2));
+    System.out.println(r1.fibonacci(3));
+    System.out.println(r1.fibonacci(4));
+    System.out.println(r1.fibonacci(5));
+    System.out.println(r1.fibonacci(6));
+    System.out.println(r1.fibonacci(7));
+    System.out.println(r1.fibonacci(8));
 
-        Person p1 = new Person();
-        p1.name = "oo";
-        p1.age = 8848;
 
-        Person p2 = p1;
-        Person newP1 = t1.copyPerson(p1);
+    System.out.println(r1.eatPeach(1, 10));
 
+    
 
-        p2.age = 9949;
-
-        newP1.age = 55;
-        p1.age = 15;
-
-        p1.name = "jj";
-        System.out.println("p1:" + p1.name + p1.age);
-        System.out.println("p2:" + p2.name + p2.age);
-        System.out.println("newP1:" + newP1.name + newP1.age);
-
-        System.out.println(p1.equals(newP1));
-        System.out.println(p1.equals(p2));
 
     }
        
@@ -33,36 +24,51 @@ public class Test {
 
 }
 
-class Person {
-    String name;
-    int age;
+class Recursion {
+    public void recur(int n) {
 
 
-}
-
-
-class MyTool {
-    
-
-    public void print2D(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
-            }
-            System.out.println("");
+        if(n > 2) {
+            recur(n - 1);
+        } else {
+            System.out.println("n+" + n);
         }
+
+        
+        
     }
-  
-    public Person copyPerson(Person personObject) {
 
-        Person newObject = new Person();
-        newObject.name = personObject.name;
-        newObject.age = personObject.age;
-
-        return newObject;
+    public int factorial(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Must Be a Positive Integer!!!!");
+        }
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
 
     }
+
+    public int fibonacci(int n) {
+        if (n <= 2) {
+            return 1;
+        }  else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+
+
+    }
+
+    public int eatPeach(int day, int endDay) {
+        if (day == endDay) {
+            return 1;
+        } else {
+            return (eatPeach(day + 1, endDay) + 1) * 2;
+        }
+
+    }
+
 
 }
-
 
