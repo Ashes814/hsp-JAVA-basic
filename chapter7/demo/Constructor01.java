@@ -1,13 +1,9 @@
 public class Constructor01 {
     public static void main(String[] args) {
-        Person person1 = new Person();
-        Person person2 = new Person("oo", 8848);
-        System.out.println(person1.hashCode());
-        System.out.println(person2.hashCode());
-        System.out.println(person1.name);
-        System.out.println(person2.name);
-        System.out.println(person1.age);
-        System.out.println(person2.age);
+        TestPerson testPerson1 = new TestPerson("oo", 24);
+        Person person2 = new Person("oo", 264);
+        System.out.println(person2.compareTo(testPerson1));
+     
     }
 }
 
@@ -26,4 +22,23 @@ class Person {
         this.age = age;
     }
 
+    public boolean compareTo(TestPerson person) {
+        if (this.name.equals(person.name) && this.age == person.age) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+}
+
+class TestPerson {
+    String name;
+    int age;
+
+    public TestPerson(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 }

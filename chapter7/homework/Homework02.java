@@ -2,13 +2,25 @@ package homework;
 
 public class Homework02 {
     public static void main(String [] args) {
-      String str = "18.8";
-      double d1 = Double.parseDouble(str);
-    
-      char c1 = 'a';
-      String s1 = c1 + "";
-      System.out.println(d1);
-      System.out.println(s1);
+      A02 test = new A02();
+      String[] str = {"小黑子", "马老师","abc","def"};
+      String element = "abcd";
+      System.out.println(test.find(str, element));
+
 
     }
+}
+
+
+class A02 {
+  public int find(String[] str, String element) {
+    int index = -1;
+    for (int i = 0; i < str.length; i++) {
+      if (element.equals(str[i])) {
+        index = i;
+        break;
+      }
+    }
+    return index;
+  }
 }
