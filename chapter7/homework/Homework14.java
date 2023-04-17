@@ -1,25 +1,18 @@
 package homework;
 import java.util.Scanner;
 import java.util.Random;
-
 public class Homework14 {
     public static void main(String[] args) {
-     
         Tom test = new Tom();
         test.startGame(4);
-        
-
     }
 }
-
 class Tom {
     int tomResult = 0;
     int pcResult = 0;
-
     public void startGame(int round) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-
         do {
             int player = scanner.nextInt();
             int pc = random.nextInt(3);
@@ -44,13 +37,11 @@ class Tom {
             } else {
                 System.out.println("Draw Game");
             }
-
             round--;
         } while (round > 0);
         scanner.close();
         System.out.println("电脑获胜次数" + this.pcResult);
         System.out.println("玩家获胜次数" + this.tomResult);
-
     }
     
 
