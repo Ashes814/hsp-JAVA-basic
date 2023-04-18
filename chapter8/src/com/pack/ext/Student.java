@@ -5,6 +5,10 @@ public class Student {
     public int age;
     private double score;
 
+    Student() {
+        System.out.println("Student constructor");
+    }
+
     public void setScore(double score) {
         this.score = score;
     }
