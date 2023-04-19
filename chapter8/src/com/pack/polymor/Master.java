@@ -16,7 +16,7 @@ public class Master {
     }
 
     public void feed(Animal animal, Food food) {
-        System.out.println("Master " + this.name + " feed " + animal.getName() + " a " + food.getName());
+        System.out.println("Master " + this.name + " feed " + animal.name + " a " + food.getName());
 
     }
 

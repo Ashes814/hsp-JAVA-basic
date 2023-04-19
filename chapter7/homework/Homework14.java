@@ -8,7 +8,7 @@ public class Homework14 {
     }
 }
 class Tom {
-    int tomResult = 0;
+    int tomResult =0;
     int pcResult = 0;
     public void startGame(int round) {
         Scanner scanner = new Scanner(System.in);
