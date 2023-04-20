@@ -8,11 +8,13 @@ public class EqualsExercise01 {
         Person p4 = p2;
 
 
-        System.out.println(p1 == p2); // false
-        System.out.println(p1.equals(p2)); // true true true true
-        System.out.println(p1.equals(p3)); // false false true false
-        System.out.println(p4 == p2); // true
-        System.out.println(p4.equals(p2)); // true
+//        System.out.println(p1 == p2); // false
+//        System.out.println(p1.equals(p2)); // true true true true
+//        System.out.println(p1.equals(p3)); // false false true false
+//        System.out.println(p4 == p2); // true
+//        System.out.println(p4.equals(p2)); // true
+
+        System.out.println(p1);
 
 
     }
@@ -53,13 +55,17 @@ class Person {
         this.gender = gender;
     }
 
+    public String toString() {
+        return this.getName();
+    }
+
     public boolean equals(Object personObj) {
         if (this == personObj) {
             return true;
         } else {
             if (personObj instanceof Person) {
                 Person newPersonObj = (Person) personObj;
-                boolean nameEqual = this.getName() == newPersonObj.getName();
+                boolean nameEqual = this.getName().equals(newPersonObj.getName());
                 System.out.println("Check Name Equal: " + nameEqual);
                 boolean ageEqual = this.getAge() == newPersonObj.getAge();
                 System.out.println("Check Name Equal: " + ageEqual);
