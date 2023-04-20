@@ -9,7 +9,7 @@ public class PolyParameter {
         polyParameter.showEmpAnnal(jack);
         polyParameter.testWork(tom);
         polyParameter.testWork(jack);
- 
+        String.equals()
     }
 
     public void showEmpAnnal(Employee e) {
