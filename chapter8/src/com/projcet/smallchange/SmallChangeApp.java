@@ -7,34 +7,14 @@ import java.util.Scanner;
 public class SmallChangeApp {
     public static void main(String[] args) {
         SmallChangeOOP app = new SmallChangeOOP();
-        boolean loop = true;
-        do {
-            app.showMenu();
+        app.execute();
 
-            switch (app.key) {
-                case "1":
-                    app.showDetails();
-                    break;
-                case "2":
-                    app.saveMoney();
-                    break;
-
-                case "3":
-                    app.consume();
-                    break;
-                case "4":
-                    app.exit();
-                    if (app.sure) {
-                        loop = false;
-                    }
-                    break;
-            }
-        } while (loop);
 
     }
 }
 
 class SmallChangeOOP {
+    boolean loop = true;
     String details = "========零钱通明细=========";
     double money = 0;
     double balance = 0;
@@ -45,6 +25,34 @@ class SmallChangeOOP {
 
     String sureInput = "";
     boolean sure = true;
+
+    public void execute() {
+        do {
+            this.showMenu();
+
+            switch (this.key) {
+                case "1":
+                    this.showDetails();
+                    break;
+                case "2":
+                    this.saveMoney();
+                    break;
+
+                case "3":
+                    this.consume();
+                    break;
+                case "4":
+                    this.exit();
+                    if (this.sure) {
+                        this.loop = false;
+                    }
+                    break;
+                default:
+                    System.out.println("菜单选择有误，请重新选择");
+            }
+        } while (this.loop);
+        System.out.println("退出成功！");
+    }
 
     public void showMenu() {
         System.out.println("++++++++++零钱通菜单++++++++++");
@@ -97,7 +105,7 @@ class SmallChangeOOP {
 
         this.balance -= this.money;
         this.date = new Date();
-        this.details += "\n" + "消费出账2：" + note + "\t" + "-" + this.money + "\t" + this.sdf.format(this.date) + "\t" + "当前余额为：" + this.balance;
+        this.details += "\n" + "消费出账：" + note + "\t" + "-" + this.money + "\t" + this.sdf.format(this.date) + "\t" + "当前余额为：" + this.balance;
     }
 
     public void exit() {
