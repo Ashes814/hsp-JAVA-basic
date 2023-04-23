@@ -1,6 +1,7 @@
 package com.oo.houserent.service;
 
 import com.oo.houserent.domain.House;
+import com.oo.houserent.utils.Utility;
 
 public class HouseService {
     private House[] houses;
@@ -91,6 +92,43 @@ public class HouseService {
         System.out.println("==========你所查找的房屋信息如下==========");
         System.out.println("编号\t\t房主\t\t电话\t\t地址\t\t月租\t\t状态");
         System.out.println(houses[index]);
+
+    }
+
+    public boolean update(int updateId) {
+        if (updateId == -1) {
+            System.out.println("放弃修改");
+            return false;
+        }
+        int index = -1;
+        for (int i = 0; i < houseNum; i++) {
+            if (houses[i].getId() == updateId) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index == -1) {
+            return false;
+        }
+
+
+
+        System.out.println("姓名：");
+
+        String name = Utility.readString(8, "");
+        if (!"".equals(name) ) {
+            houses[index].setName(name);
+        }
+        System.out.println("电话：");
+        houses[index].setPhone(Utility.readString(12, ""));
+        System.out.println("地址：");
+        houses[index].setAddress(Utility.readString(16, ""));
+        System.out.println("租金：");
+        houses[index].setRent(Utility.readInt(-1));
+        System.out.println("状态：");
+        houses[index].setState(Utility.readString(3, ""));
+        return true;
 
     }
 }

@@ -124,7 +124,16 @@ public class HouseView {
         int searchId = Utility.readInt();
         houseService.search(searchId);
     }
-    public void updateHouse(){}
+    public void updateHouse(){
+        System.out.println("==========Update House===========");
+        System.out.println("Please input the id of the house you want to update:");
+        int updateId = Utility.readInt();
+        if (houseService.update(updateId)) {
+            System.out.println("UPDATE SUCCESS!!");
+        } else {
+            System.out.println("UPDATE FAILED!!");
+        };
+    }
     public void exit() {
         char confirm = Utility.readConfirmSelection();
         if (confirm == 'Y') {
