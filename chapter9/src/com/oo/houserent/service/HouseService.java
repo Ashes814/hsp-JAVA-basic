@@ -73,4 +73,24 @@ public class HouseService {
 
         return true;
     }
+    public void search(int searchId) {
+        int index = -1;
+        for (int i = 0; i < houseNum; i++) {
+            if (houses[i].getId() == searchId) {
+                index = i;
+                break;
+            }
+
+        }
+
+        if (index == -1) {
+            System.out.println("No Such Rent ❌");
+            return;
+        }
+
+        System.out.println("==========你所查找的房屋信息如下==========");
+        System.out.println("编号\t\t房主\t\t电话\t\t地址\t\t月租\t\t状态");
+        System.out.println(houses[index]);
+
+    }
 }

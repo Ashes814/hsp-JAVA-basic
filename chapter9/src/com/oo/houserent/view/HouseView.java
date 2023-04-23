@@ -33,6 +33,7 @@ public class HouseView {
                     break;
                 case '2':
                     System.out.println("查找房屋");
+                    this.searchHouse();
                     break;
                 case '3':
                     System.out.println("删除房屋");
@@ -48,7 +49,8 @@ public class HouseView {
                     break;
                 case '6':
                     System.out.println("退出");
-                    loop = false;
+                    this.exit();
+
                     break;
                 default:
                     System.out.println("输入有误，请重新输入");
@@ -116,5 +118,17 @@ public class HouseView {
 
     }
 
+    public void searchHouse() {
+        System.out.println("==========Search House===========");
+        System.out.println("Please input the id of the house you want to search:");
+        int searchId = Utility.readInt();
+        houseService.search(searchId);
+    }
     public void updateHouse(){}
+    public void exit() {
+        char confirm = Utility.readConfirmSelection();
+        if (confirm == 'Y') {
+            loop = false;
+        }
+    }
 }
