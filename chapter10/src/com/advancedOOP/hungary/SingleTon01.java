@@ -1,5 +1,5 @@
 package com.advancedOOP.hungary;
-
+//饿汉式单例模式
 public class SingleTon01 {
     public static void main(String[] args) {
         GirlFriend instance = GirlFriend.getInstance();
