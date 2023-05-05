@@ -31,5 +31,6 @@ class CommonEmployee extends Employee {
 
     public void work() {
         System.out.println(this.getName() + "is Common is working");
+
     }
 }
