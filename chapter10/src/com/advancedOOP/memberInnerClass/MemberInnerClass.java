@@ -5,6 +5,9 @@ public class MemberInnerClass {
         Outer outer = new Outer();
         outer.t1();
 
+        Outer.Inner outer2 = new Outer().new Inner();
+        outer2.say();
+
 
     }
 }
