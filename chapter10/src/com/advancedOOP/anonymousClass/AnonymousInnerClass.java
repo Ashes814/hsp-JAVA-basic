@@ -28,6 +28,11 @@ class Outer04 {
 
         System.out.println(tiger.getClass());
 
+        new Father("f"){
+
+        }.test();
+
+
         tiger.cry();
     }
 }
@@ -37,11 +42,14 @@ interface A {
 }
 
 class Father {
-    public Father(String name) {
 
+    private String name;
+    public Father(String name) {
+        this.name = name;
     }
 
     public void test() {
+        System.out.println("Test");
 
     }
 }
