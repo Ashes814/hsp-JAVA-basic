@@ -14,6 +14,8 @@ public class EnumMethods {
             System.out.println(season);
         }
 
+        System.out.println(SeasonEnum2.AUTUMN.compareTo(SeasonEnum2.SPRING));
+
     }
 }
 
