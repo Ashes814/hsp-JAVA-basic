@@ -6,7 +6,12 @@ package com.advancedOOP.enumClass;
  */
 public class Enumeration02 {
     public static void main(String[] args) {
-        System.out.println(Season.AUTUMN);
+        SeasonEnum t1 = SeasonEnum.AUTUMN;
+        SeasonEnum t2 = SeasonEnum.AUTUMN;
+        System.out.println(SeasonEnum.AUTUMN);
+        System.out.println(SeasonEnum.WHAT);
+        System.out.println(t1);
+        System.out.println(t1 == t2);
 
 
     }
