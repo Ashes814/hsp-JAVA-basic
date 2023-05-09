@@ -14,14 +14,20 @@ public class Homework03 {
 }
 
 abstract class Animal {
-    abstract public void shout();
+    abstract void shout();
 }
 
 class Cat extends Animal {
+
+    @Override
     public void shout() {
         System.out.println("Cat MEW MEW");
     }
-}class Dog extends Animal {
+}
+
+ class Dog extends Animal {
+
+    @Override
     public void shout() {
         System.out.println("Dog Woof Woof");
     }
