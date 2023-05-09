@@ -12,6 +12,7 @@ public class EnumExercise02 {
     }
 }
 
+@Deprecated
 enum Week {
     MONDAY("MONDAY"),
     TUESDAY("TUESDAY"),
