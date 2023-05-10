@@ -19,7 +19,8 @@ public class TryCatch02 {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("input is not a integer try again;");
-            }} while (true);
+            }
+        } while (true);
 
     }
 }
