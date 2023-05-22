@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="570ad095-bc56-4cc0-a8e0-bfce41ba9880" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/chapter14/src/com/oocool/map_/HashMapExercise01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter10/chapter10.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter12/chapter12.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter13/chapter13.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter14/chapter14.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter14/src/com/oocool/map_/HashMap01.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter14/src/com/oocool/map_/HashMap01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter8/chapter8.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter9/chapter9.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/niukeJAVAExercise/niukeJAVAExercise.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Q8DxbTMLofus7RcAtgwyKunpkJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/zowcool/Desktop/Learning/hsp-JAVA-basic"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="570ad095-bc56-4cc0-a8e0-bfce41ba9880" name="Changes" comment="" />
+      <created>1684726561962</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684726561962</updated>
+    </task>
+    <servers />
+  </component>
+</project>
