@@ -18,7 +18,9 @@ public class MainPanel extends JFrame {
         gp = new GamePanel();
         this.add(gp);
         this.setSize(1000,750);
+        this.addKeyListener(gp);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+//        this.setVisible(true);
     }
 }
