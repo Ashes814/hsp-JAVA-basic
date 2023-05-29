@@ -6,21 +6,20 @@ import javax.swing.*;
  * @author 欧欧
  * @version 1.0
  */
-public class MainPanel extends JFrame {
+public class MainFrame extends JFrame {
 
     GamePanel gp = null;
 
     public static void main(String[] args) {
-        MainPanel mainPanel = new MainPanel();
+        MainFrame mainFrame = new MainFrame();
     }
 
-    public MainPanel() {
+    public MainFrame() {
         gp = new GamePanel();
         this.add(gp);
         this.setSize(1000,750);
         this.addKeyListener(gp);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-//        this.setVisible(true);
     }
 }
