@@ -9,7 +9,10 @@ public class Thread01 {
 
         Cat cat = new Cat();
         cat.start();
-        System.out.println("won't stop");
+
+        Thread thread = new Thread(new Dog());
+        thread.start();
+
 
     }
 }
@@ -32,6 +35,29 @@ class Cat extends Thread {
             }
 
             if (times == 8) {
+                break;
+            }
+        }
+    }
+}
+
+class Dog implements Runnable {
+    int times = 0;
+    @Override
+    public void run() {
+
+        while (true) {
+            System.out.println("woof woof" + (++times));
+
+
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+            if (times == 10) {
                 break;
             }
         }
