@@ -14,17 +14,17 @@ public class ThreadSaleTickets {
 //        sellTicket02.start();
 //        sellTicket03.start();
 //
-//        SellTicket02 sellTicket01 = new SellTicket02();
+        SellTicket02 sellTicket01 = new SellTicket02();
 //        SellTicket02 sellTicket02 = new SellTicket02();
 //        SellTicket02 sellTicket03 = new SellTicket02();
-//        Thread thread1 = new Thread(sellTicket01);
-//        Thread thread2 = new Thread(sellTicket01);
-//        Thread thread3 = new Thread(sellTicket01);
-//
-//
-//        thread1.start();
-//        thread2.start();
-//        thread3.start();
+        Thread thread1 = new Thread(sellTicket01);
+        Thread thread2 = new Thread(sellTicket01);
+        Thread thread3 = new Thread(sellTicket01);
+
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
 
 
     }
@@ -33,13 +33,11 @@ public class ThreadSaleTickets {
 class SellTicket01 extends Thread {
     public static int ticketNum = 100;
 
+    public synchronized int sell() {
 
-    @Override
-    public void run() {
-        while (true) {
             if (ticketNum <= 0) {
                 System.out.println("Tickets have been sold out!!");
-                break;
+                return 1;
             }
 
             try {
@@ -50,33 +48,50 @@ class SellTicket01 extends Thread {
 
             System.out.print("Window: " + Thread.currentThread().getName() + "sold a ticket  ");
             System.out.println("Tickets Remains: " + (--ticketNum));
+            return -1;
 
+
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            if (sell() == 1) {
+                break;
+            };
         }
 
     }
 }
 
 class SellTicket02 implements Runnable{
-    public int ticketNum = 100;
+    public int ticketNum = 1000;
+    public synchronized int sell() {
 
+        if (ticketNum <= 0) {
+            System.out.println("Tickets have been sold out!!");
+            return 1;
+        }
+
+        try {
+            Thread.sleep(5);
+        } catch(InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.print("Window: " + Thread.currentThread().getName() + "sold a ticket  ");
+        System.out.println("Tickets Remains: " + (--ticketNum));
+        return -1;
+
+
+    }
 
     @Override
     public void run() {
         while (true) {
-            if (ticketNum <= 0) {
-                System.out.println("Tickets have been sold out!!");
+            if (sell() == 1) {
                 break;
-            }
-
-            try {
-                Thread.sleep(50);
-            } catch(InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            System.out.print("Window: " + Thread.currentThread().getName() + "sold a ticket  ");
-            System.out.println("Tickets Remains: " + (--ticketNum));
-
+            };
         }
 
     }
