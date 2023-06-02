@@ -16,6 +16,8 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         gp = new GamePanel();
+        Thread thread = new Thread(gp);
+        thread.start();
         this.add(gp);
         this.setSize(1000,750);
         this.addKeyListener(gp);
