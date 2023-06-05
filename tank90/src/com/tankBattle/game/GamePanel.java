@@ -57,8 +57,15 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
         hero.setSpeed(10);
         drawTank(hero.getX(), hero.getY(), g, hero.getDirect(),1);
 
+//        for (Shot shot: hero.shots ) {
+//            if (shot != null && shot.isLive) {
+//                g.fillOval(shot.x, shot.y, 6,6);
+//            } else {
+//                hero.shots.remove(shot);
+//            }
+//        }
         if (hero.shot != null && hero.shot.isLive) {
-            g.fillOval(hero.shot.x, hero.shot.y, 6,6);
+                g.fillOval(hero.shot.x, hero.shot.y, 6,6);
         }
 
         for (int i = 0; i < bombs.size(); i++) {
@@ -128,7 +135,14 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
                 hero.moveLeft();
                 break;
             case 74:
-                hero.shotEnemyTank();
+
+                if (hero.shot == null || !hero.shot.isLive) {
+                    hero.shotEnemyTank();
+                }
+
+
+
+
             default:
                 System.out.println(e.getKeyCode());
         }
@@ -221,7 +235,20 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
         }
 
     }
-
+//    public void hitEnemyTank() {
+//        if (hero.shots != null) {
+//            for (int i = 0; i < hero.shots.size(); i++) {
+//                Shot shot = hero.shots.get(i);
+//                for (int j = 0; j < enemyTanks.size(); j++) {
+//                    EnemyTank enemyTank = enemyTanks.get(j);
+//                    if (shot != null && shot.isLive)
+//                        hitTank(shot, enemyTank);
+//                    }
+//
+//            }
+//
+//        }
+//    }
     @Override
     public void run() {
         while (true) {
@@ -231,12 +258,13 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
                 throw new RuntimeException(e);
             }
 
+//            hitEnemyTank();
+
+
             if (hero.shot != null && hero.shot.isLive) {
-
-                for (int i = 0; i < enemyTanks.size(); i++) {
-                    hitTank(hero.shot, enemyTanks.get(i));
+                for (EnemyTank enemyTank: enemyTanks) {
+                    hitTank(hero.shot, enemyTank);
                 }
-
             }
 
             this.repaint();
