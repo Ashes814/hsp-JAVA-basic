@@ -54,8 +54,12 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
     public void paint(Graphics g) {
         super.paint(g);
         g.fillRect(0, 0, 1000, 750);
-        hero.setSpeed(10);
-        drawTank(hero.getX(), hero.getY(), g, hero.getDirect(),1);
+        hero.setSpeed(100);
+
+        if (hero.isLive) {
+            drawTank(hero.getX(), hero.getY(), g, hero.getDirect(),1);
+        }
+
 
 //        for (Shot shot: hero.shots ) {
 //            if (shot != null && shot.isLive) {
@@ -151,7 +155,7 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
     }
 
 
-    public void hitTank(Shot s, EnemyTank enemyTank) {
+    public void hitTank(Shot s, Tank enemyTank) {
         switch (enemyTank.getDirect()) {
             case 0:
             case 2:
@@ -175,6 +179,19 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
                 }
                 break;
 
+        }
+    }
+
+    public void hitHero() {
+        for (int i = 0; i< enemyTanks.size();i++) {
+            EnemyTank enemyTank = enemyTanks.get(i);
+            for (int j = 0; j < enemyTank.enemyShots.size(); j++) {
+                Shot shot = enemyTank.enemyShots.get(j);
+                if (hero.isLive && shot.isLive) {
+                    hitTank(shot, hero);
+                }
+
+            }
         }
     }
 
@@ -261,11 +278,17 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
 //            hitEnemyTank();
 
 
+//            if (hero.shot != null && hero.shot.isLive) {
+//                for (EnemyTank enemyTank: enemyTanks) {
+//                    hitTank(hero.shot, enemyTank);
+//                }
+//            }
             if (hero.shot != null && hero.shot.isLive) {
-                for (EnemyTank enemyTank: enemyTanks) {
-                    hitTank(hero.shot, enemyTank);
+                for (int i = 0; i < enemyTanks.size(); i++) {
+                    hitTank(hero.shot, enemyTanks.get(i));
                 }
             }
+            hitHero();
 
             this.repaint();
         }

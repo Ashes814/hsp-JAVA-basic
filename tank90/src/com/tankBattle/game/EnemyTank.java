@@ -8,7 +8,7 @@ import java.util.Random;
  * @version 1.0
  */
 public class EnemyTank extends Tank implements Runnable{
-    boolean isLive = true;
+
     Vector<Shot> enemyShots = new Vector<>();
     public EnemyTank(int x, int y) {
         super(x, y);
@@ -19,7 +19,7 @@ public class EnemyTank extends Tank implements Runnable{
     @Override
     public void run() {
         while (true) {
-            if (isLive && enemyShots.size()==0) {
+            if (isLive && enemyShots.size() <= 1) {
                 Shot s = null;
                 switch (getDirect()) {
                     case 0:

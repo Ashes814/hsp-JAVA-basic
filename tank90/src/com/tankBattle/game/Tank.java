@@ -9,6 +9,7 @@ public class Tank {
     private int y;
     private int direct;
     private int speed = 5;
+    boolean isLive = true;
 
     public int getSpeed() {
         return speed;

@@ -10,6 +10,7 @@ import java.util.Vector;
  */
 public class Hero extends Tank {
     Shot shot = null;
+
 //    Vector<Shot> shots = new Vector<>();
     public Hero(int x, int y) {
         super(x, y);
