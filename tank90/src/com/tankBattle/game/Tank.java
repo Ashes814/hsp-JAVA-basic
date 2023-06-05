@@ -8,7 +8,7 @@ public class Tank {
     private int x;
     private int y;
     private int direct;
-    private int speed = 1;
+    private int speed = 5;
 
     public int getSpeed() {
         return speed;
@@ -19,13 +19,32 @@ public class Tank {
     }
 
     public void moveUp() {
+
         y -= this.getSpeed();
-    }public void moveRight() {
+        if (y <= 0) {
+            y = 0;
+        }
+    }
+    public void moveRight() {
+
         x += this.getSpeed();
-    }public void moveDown() {
+        if (x >= 940) {
+            x = 940;
+        }
+    }
+    public void moveDown() {
+
         y += this.getSpeed();
-    }public void moveLeft() {
+        if (y >= 690) {
+            y = 690;
+        }
+    }
+    public void moveLeft() {
+
         x -= this.getSpeed();
+        if (x <= 0) {
+            x = 0;
+        }
     }
 
     public void setDirect(int direct) {

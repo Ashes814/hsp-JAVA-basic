@@ -37,10 +37,12 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
             Thread thread = new Thread(shot);
             thread.start();
             enemyTanks.add(enemyTank);
+            Thread threadEnemyTank = new Thread(enemyTank);
+            threadEnemyTank.start();
 
 
         }
-        System.out.println(Panel.class);
+
         image1 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/boom01.png"));
         image2 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/boom02.png"));
         image3 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/boom03.png"));
@@ -142,8 +144,10 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
                 if (s.x > enemyTank.getX() && s.x < enemyTank.getX() + 40 && s.y > enemyTank.getY() && s.y < enemyTank.getY() + 60) {
                     s.isLive = false;
                     enemyTank.isLive = false;
+                    enemyTanks.remove(enemyTank);
                     Bomb bomb = new Bomb(enemyTank.getX(), enemyTank.getY());
                     bombs.add(bomb);
+
                 }
                 break;
             case 1:
@@ -151,6 +155,7 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
                 if (s.x > enemyTank.getX() && s.x < enemyTank.getX() + 60 && s.y > enemyTank.getY() && s.y < enemyTank.getY() + 40) {
                     s.isLive = false;
                     enemyTank.isLive = false;
+                    enemyTanks.remove(enemyTank);
                     Bomb bomb = new Bomb(enemyTank.getX(), enemyTank.getY());
                     bombs.add(bomb);
                 }
