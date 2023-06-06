@@ -24,7 +24,7 @@ public class CopyImage {
         String outputFile = "/Users/zowcool/Desktop/Learning/hsp-JAVA-basic/chapter19/src/com/file/copy001.txt";
         FileInputStream fileInputStream = null;
         FileOutputStream fileOutputStream = null;
-        byte[] buf = new byte[8];
+        byte[] buf = new byte[1024];
         int readLen = 0;
         String data;
 
@@ -33,10 +33,26 @@ public class CopyImage {
             fileOutputStream = new FileOutputStream(outputFile);
 
             while ((readLen = fileInputStream.read(buf)) != -1) {
-                fileOutputStream.write(buf);
+                fileOutputStream.write(buf, 0, readLen);
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+
+
+            try {
+                if (fileInputStream != null) {
+                    fileInputStream.close();
+                }
+
+                if (fileOutputStream != null) {
+                    fileOutputStream.close();
+                }
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
         }
 
     }
