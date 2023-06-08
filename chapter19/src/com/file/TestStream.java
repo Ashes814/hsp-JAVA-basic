@@ -18,6 +18,7 @@ class FileReader_ extends  Reader_ {
     public void readFile() {
         System.out.println("对文件进行读取");
     }
+
 }
 
 class StringReader_ extends  Reader_ {
@@ -33,6 +34,7 @@ class BufferedReader_ extends Reader_{
     public BufferedReader_(Reader_ reader_) {
         this.reader_ = reader_;
     }
+
 
     public void readFile() {
         reader_.readFile();
