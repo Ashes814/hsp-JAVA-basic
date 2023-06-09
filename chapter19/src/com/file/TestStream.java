@@ -63,13 +63,13 @@ class BufferedReader_ extends Reader_{
 
 public class TestStream {
     public static void main(String[] args) {
-        BufferedReader_ bufferedReader = new BufferedReader_(new FileReader_());// 使用File节点流
-        bufferedReader.readFile(); // //可以调用File节点流本来的readFile方法
-        bufferedReader.readFiles(10); //也可以调用扩展的方法多次readFile
-
-        BufferedReader_ bufferedReaderString = new BufferedReader_(new StringReader_()); // 变换成String节点流
-        bufferedReaderString.readString(); //调用String节点流本来的readString方法
-        bufferedReaderString.readStrings(10); //调用扩展的方法多次readString
+//        BufferedReader__ bufferedReader = new BufferedReader__(new FileReader_());// 使用File节点流
+//        bufferedReader.readFile(); // //可以调用File节点流本来的readFile方法
+//        bufferedReader.readFiles(10); //也可以调用扩展的方法多次readFile
+//
+//        BufferedReader__ bufferedReaderString = new BufferedReader__(new StringReader_()); // 变换成String节点流
+//        bufferedReaderString.readString(); //调用String节点流本来的readString方法
+//        bufferedReaderString.readStrings(10); //调用扩展的方法多次readString
 
     }
 }
