@@ -23,16 +23,16 @@ public class EnemyTank extends Tank implements Runnable{
                 Shot s = null;
                 switch (getDirect()) {
                     case 0:
-                        s = new Shot(getX() + 20, getY(), 0);
+                        s = new Shot(getX() + 20 - 3, getY(), 0);
                         break;
                     case 1:
-                        s = new Shot(getX() + 60, getY() + 20, 1);
+                        s = new Shot(getX() + 60, getY() + 20 - 3, 1);
                         break;
                     case 2:
-                        s = new Shot(getX() + 20, getY() + 60, 2);
+                        s = new Shot(getX() + 20 - 3, getY() + 60, 2);
                         break;
                     case 3:
-                        s = new Shot(getX() , getY() + 20, 3);
+                        s = new Shot(getX() , getY() + 20 - 3, 3);
                         break;
                 }
                 enemyShots.add(s);
@@ -96,7 +96,7 @@ public class EnemyTank extends Tank implements Runnable{
             if (!isLive) {
                 break;
             }
-            System.out.println("Enemy Tank Run: " + this.getX() + ":" + this.getY());
+//            System.out.println("Enemy Tank Run: " + this.getX() + ":" + this.getY());
         }
     }
 }

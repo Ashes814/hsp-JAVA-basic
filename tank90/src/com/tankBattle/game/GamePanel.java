@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
         for (int i = 0; i < enemyTankSize; i++) {
             EnemyTank enemyTank = new EnemyTank(100*(i + 1), 0);
             enemyTank.setDirect(2);
-            Shot shot = new Shot(enemyTank.getX() + 20,  enemyTank.getY() + 60, enemyTank.getDirect());
+            Shot shot = new Shot(enemyTank.getX() + 20 - 3,  enemyTank.getY() + 60, enemyTank.getDirect());
             enemyTank.enemyShots.add(shot);
             Thread thread = new Thread(shot);
             thread.start();
@@ -54,7 +54,7 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
     public void paint(Graphics g) {
         super.paint(g);
         g.fillRect(0, 0, 1000, 750);
-        hero.setSpeed(100);
+        hero.setSpeed(10);
 
         if (hero.isLive) {
             drawTank(hero.getX(), hero.getY(), g, hero.getDirect(),1);

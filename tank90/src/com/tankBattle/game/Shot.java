@@ -8,7 +8,7 @@ public class Shot implements Runnable{
     int x;
     int y;
     int direct = 0;
-    int speed = 12;
+    int speed = 8;
     boolean isLive = true;
 
     public Shot(int x, int y, int direct) {
