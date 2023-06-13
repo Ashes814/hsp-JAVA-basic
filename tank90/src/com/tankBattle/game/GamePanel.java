@@ -12,14 +12,14 @@ import java.util.Vector;
  */
 public class GamePanel extends JPanel implements KeyListener,Runnable {
      int initX = 300;
-     int initY = 200;
+     int initY = 600;
 
     Hero hero = null;
 
     Vector<EnemyTank> enemyTanks = new Vector<>();
     Vector<Bomb> bombs = new Vector<>();
 
-    int enemyTankSize = 3;
+    int enemyTankSize = 5;
 
     Image image1 = null;
     Image image2 = null;
@@ -28,9 +28,12 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
 
 
     public GamePanel() {
+        Recoder.setEnemyTanks(enemyTanks);
         hero = new Hero(initX, initY);
         for (int i = 0; i < enemyTankSize; i++) {
-            EnemyTank enemyTank = new EnemyTank(100*(i + 1), 0);
+            EnemyTank enemyTank = new EnemyTank(100*(i % 8 + 1), 100 * (i / 8));
+            // set enemyTanks to enemyTank
+            enemyTank.setEnemyTanks(enemyTanks);
             enemyTank.setDirect(2);
             Shot shot = new Shot(enemyTank.getX() + 20 - 3,  enemyTank.getY() + 60, enemyTank.getDirect());
             enemyTank.enemyShots.add(shot);
@@ -49,11 +52,21 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
 
 
     }
-
+// show the number of destroied tank
+    public void showInfo(Graphics g) {
+        g.setColor(Color.BLACK);
+        Font font = new Font("sans-serif", Font.BOLD, 25);
+        g.setFont(font);
+        g.drawString("You Has Destroied ", 1020, 30);
+        drawTank(1020, 60, g, 0, 0);
+        g.setColor(Color.BLACK);
+        g.drawString(Recoder.getAllEnemyTankNum() + "", 1080, 100);
+    }
     @Override
     public void paint(Graphics g) {
         super.paint(g);
         g.fillRect(0, 0, 1000, 750);
+        showInfo(g);
         hero.setSpeed(10);
 
         if (hero.isLive) {
@@ -162,6 +175,11 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
                 if (s.x > enemyTank.getX() && s.x < enemyTank.getX() + 40 && s.y > enemyTank.getY() && s.y < enemyTank.getY() + 60) {
                     s.isLive = false;
                     enemyTank.isLive = false;
+
+                    if (enemyTank instanceof EnemyTank) {
+                        Recoder.addAllEnemyTankNum(); // add the number of destroyed tank
+                    }
+
                     enemyTanks.remove(enemyTank);
                     Bomb bomb = new Bomb(enemyTank.getX(), enemyTank.getY());
                     bombs.add(bomb);
@@ -174,6 +192,9 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
                     s.isLive = false;
                     enemyTank.isLive = false;
                     enemyTanks.remove(enemyTank);
+                    if (enemyTank instanceof EnemyTank) {
+                        Recoder.addAllEnemyTankNum(); // add the number of destroyed tank
+                    }
                     Bomb bomb = new Bomb(enemyTank.getX(), enemyTank.getY());
                     bombs.add(bomb);
                 }
