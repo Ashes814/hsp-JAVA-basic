@@ -20,6 +20,10 @@ public class Recoder {
     private static String recordFile = "/Users/zowcool/Desktop/Learning/hsp-JAVA-basic/tank90/myRecord.txt";
     private static Vector<Node> nodes = new Vector<>();
 
+    public static Vector<Node> getNodesAndEnemyTankRec() {
+
+    }
+
 
     // save enemyTank Loc and Direct
     public static void keepRecord()  {
