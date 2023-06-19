@@ -17,6 +17,8 @@ public class SocketTCP02Client {
         InputStream inputStream = socket.getInputStream();
         // 3. write data to socket by output stream
         outputStream.write("hello, server".getBytes());
+        // set end mark
+        socket.shutdownOutput();
 
         byte[] buf = new byte[1024];
         int readLen = 0;
@@ -25,6 +27,7 @@ public class SocketTCP02Client {
         }
 
         // 4. close stream object and socket
+        inputStream.close();
         outputStream.close();
         socket.close();
         System.out.println("Client exit");
