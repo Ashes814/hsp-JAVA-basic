@@ -17,6 +17,7 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
     Hero hero = null;
 
     Vector<EnemyTank> enemyTanks = new Vector<>();
+    Vector<Node> nodes = new Vector<>();
     Vector<Bomb> bombs = new Vector<>();
 
     int enemyTankSize = 5;
@@ -27,23 +28,51 @@ public class GamePanel extends JPanel implements KeyListener,Runnable {
 
 
 
-    public GamePanel() {
+    public GamePanel(String key) {
+        nodes = Recoder.getNodesAndEnemyTankRec();
         Recoder.setEnemyTanks(enemyTanks);
         hero = new Hero(initX, initY);
-        for (int i = 0; i < enemyTankSize; i++) {
-            EnemyTank enemyTank = new EnemyTank(100*(i % 8 + 1), 100 * (i / 8));
-            // set enemyTanks to enemyTank
-            enemyTank.setEnemyTanks(enemyTanks);
-            enemyTank.setDirect(2);
-            Shot shot = new Shot(enemyTank.getX() + 20 - 3,  enemyTank.getY() + 60, enemyTank.getDirect());
-            enemyTank.enemyShots.add(shot);
-            Thread thread = new Thread(shot);
-            thread.start();
-            enemyTanks.add(enemyTank);
-            Thread threadEnemyTank = new Thread(enemyTank);
-            threadEnemyTank.start();
+
+        switch (key) {
+            case "1":
+                for (int i = 0; i < enemyTankSize; i++) {
+                    EnemyTank enemyTank = new EnemyTank(100 * (i % 8 + 1), 100 * (i / 8));
+                    // set enemyTanks to enemyTank
+                    enemyTank.setEnemyTanks(enemyTanks);
+                    enemyTank.setDirect(2);
+                    Shot shot = new Shot(enemyTank.getX() + 20 - 3, enemyTank.getY() + 60, enemyTank.getDirect());
+                    enemyTank.enemyShots.add(shot);
+                    Thread thread = new Thread(shot);
+                    thread.start();
+                    enemyTanks.add(enemyTank);
+                    Thread threadEnemyTank = new Thread(enemyTank);
+                    threadEnemyTank.start();
 
 
+                }
+
+                break;
+            case "2":
+                for (int i = 0; i < nodes.size(); i++) {
+                    Node node = nodes.get(i);
+                    EnemyTank enemyTank = new EnemyTank(node.getX(), node.getY());
+                    // set enemyTanks to enemyTank
+                    enemyTank.setEnemyTanks(enemyTanks);
+                    enemyTank.setDirect(node.getDirect());
+                    Shot shot = new Shot(enemyTank.getX() + 20 - 3,  enemyTank.getY() + 60, enemyTank.getDirect());
+                    enemyTank.enemyShots.add(shot);
+                    Thread thread = new Thread(shot);
+                    thread.start();
+                    enemyTanks.add(enemyTank);
+                    Thread threadEnemyTank = new Thread(enemyTank);
+                    threadEnemyTank.start();
+
+
+                }
+
+                break;
+            default:
+                System.out.println("You stupid!!!!!");
         }
 
         image1 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/boom01.png"));

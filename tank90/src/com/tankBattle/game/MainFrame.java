@@ -3,6 +3,7 @@ package com.tankBattle.game;
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Scanner;
 
 /**
  * @author 欧欧
@@ -11,13 +12,18 @@ import java.awt.event.WindowEvent;
 public class MainFrame extends JFrame {
 
     GamePanel gp = null;
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         MainFrame mainFrame = new MainFrame();
+
     }
 
     public MainFrame() {
-        gp = new GamePanel();
+        System.out.println("1: new game; 2:continue");
+        String key = scanner.next();
+        gp = new GamePanel(key);
         Thread thread = new Thread(gp);
         thread.start();
         this.add(gp);
