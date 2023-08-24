@@ -1,5 +1,6 @@
 package com.jdbc_;
 
+import com.dao_.domain.Baea;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;

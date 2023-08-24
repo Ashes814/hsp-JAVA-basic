@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="570ad095-bc56-4cc0-a8e0-bfce41ba9880" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_dbutils_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter23/libs/commons-dbutils-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter23/src/com/jdbc_/ApacheDBUtilsUse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter23/src/com/jdbc_/Baea.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter23/src/com/dao_/dao/BaeaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter23/src/com/dao_/dao/BasicDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter23/src/com/dao_/test/TestDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter23/src/com/dao_/utils/JDBCUtilsByDruid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter23/chapter23.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter23/chapter23.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter23/src/com/jdbc_/ApacheDBUtilsSim.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter23/src/com/jdbc_/ApacheDBUtilsSim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter23/src/com/jdbc_/ApacheDBUtilsUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter23/src/com/jdbc_/ApacheDBUtilsUse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter23/src/com/jdbc_/Baea.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter23/src/com/dao_/domain/Baea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/chapter23/com/jdbc_/ApacheDBUtilsSim.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chapter23/com/jdbc_/ApacheDBUtilsSim.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chapter23/com/jdbc_/ApacheDBUtilsUse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chapter23/com/jdbc_/ApacheDBUtilsUse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chapter23/com/jdbc_/Baea.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,15 +69,16 @@
       <recent name="com.jdbc_" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dao_.domain" />
       <recent name="com.jdbc_" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApacheDBUtilsUse.testQuery">
+  <component name="RunManager" selected="JUnit.TestDAO.testBaeaDAO">
     <configuration name="ApacheDBUtilsSim.testADBSim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chapter23" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jdbc_.*" />
+          <option name="PATTERN" value="com.dao_.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,7 +94,7 @@
       <module name="chapter23" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jdbc_.*" />
+          <option name="PATTERN" value="com.dao_.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,22 +122,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C3P0Test.testC3P0_02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="chapter23" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.connectPool.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.connectPool" />
-      <option name="MAIN_CLASS_NAME" value="com.connectPool.C3P0Test" />
-      <option name="METHOD_NAME" value="testC3P0_02" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DreuidPoolTest.testDruid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chapter23" />
       <extension name="coverage">
@@ -145,6 +133,22 @@
       <option name="PACKAGE_NAME" value="com.connectPool" />
       <option name="MAIN_CLASS_NAME" value="com.connectPool.DreuidPoolTest" />
       <option name="METHOD_NAME" value="testDruid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDAO.testBaeaDAO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chapter23" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dao_.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dao_.test" />
+      <option name="MAIN_CLASS_NAME" value="com.dao_.test.TestDAO" />
+      <option name="METHOD_NAME" value="testBaeaDAO" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestDAO.testBaeaDAO" />
         <item itemvalue="JUnit.ApacheDBUtilsUse.testQuery" />
         <item itemvalue="JUnit.ApacheDBUtilsSim.testADBSim" />
         <item itemvalue="JUnit.DreuidPoolTest.testDruid" />
         <item itemvalue="JUnit.C3P0Test.testC3P0_01" />
-        <item itemvalue="JUnit.C3P0Test.testC3P0_02" />
       </list>
     </recent_temporary>
   </component>

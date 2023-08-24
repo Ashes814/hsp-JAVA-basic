@@ -1,4 +1,4 @@
-package com.jdbc_;
+package com.dao_.domain;
 
 /**
  * @author 欧欧
