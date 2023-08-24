@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="570ad095-bc56-4cc0-a8e0-bfce41ba9880" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter23/src/test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/c3p0_0_9_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter23/libs/c3p0-0.9.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter23/src/c3p0-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter23/src/com/connectPool/C3P0Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter23/src/com/jdbc_/JDBC01.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter23/src/com/jdbc_/JDBC01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter23/src/com/jdbc_/JDBCUtills.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter23/src/com/jdbc_/JDBCUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chapter23/com/jdbc_/JDBC01.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chapter23/com/jdbc_/JDBC01.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter23/chapter23.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter23/chapter23.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
       <recent name="com.jdbc_" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JDBC01">
+  <component name="RunManager" selected="JUnit.C3P0Test.testC3P0_02">
     <configuration name="JDBC01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jdbc_.JDBC01" />
       <module name="chapter23" />
@@ -91,33 +91,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBC02.connect01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="C3P0Test.testC3P0_01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chapter23" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jdbc_.*" />
+          <option name="PATTERN" value="com.connectPool.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jdbc_" />
-      <option name="MAIN_CLASS_NAME" value="com.jdbc_.JDBC02" />
-      <option name="METHOD_NAME" value="connect01" />
+      <option name="PACKAGE_NAME" value="com.connectPool" />
+      <option name="MAIN_CLASS_NAME" value="com.connectPool.C3P0Test" />
+      <option name="METHOD_NAME" value="testC3P0_01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBC02.connect02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="C3P0Test.testC3P0_02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chapter23" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jdbc_.*" />
+          <option name="PATTERN" value="com.connectPool.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jdbc_" />
-      <option name="MAIN_CLASS_NAME" value="com.jdbc_.JDBC02" />
-      <option name="METHOD_NAME" value="connect02" />
+      <option name="PACKAGE_NAME" value="com.connectPool" />
+      <option name="MAIN_CLASS_NAME" value="com.connectPool.C3P0Test" />
+      <option name="METHOD_NAME" value="testC3P0_02" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.C3P0Test.testC3P0_02" />
+        <item itemvalue="JUnit.C3P0Test.testC3P0_01" />
         <item itemvalue="Application.JDBC01" />
         <item itemvalue="Application.JDBCResultSet" />
         <item itemvalue="JUnit.JDBC02.connect03" />
-        <item itemvalue="JUnit.JDBC02.connect02" />
-        <item itemvalue="JUnit.JDBC02.connect01" />
       </list>
     </recent_temporary>
   </component>
